@@ -41,9 +41,30 @@ android {
             }
         }
     }
+    
     buildTypes {
         release {
             signingConfig signingConfigs.release
+        }
+        customDebug{
+            initWith debug
+            applicationIdSuffix ".dev"
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    
+        flavorDimensions "dev"
+    
+        productFlavors {
+        dev {
+            dimension "dev"
+            resValue "string", "app_name", "Dev"
+            versionNameSuffix ".dev"
+        }
+        prod {
+            dimension "dev"
+            resValue "string", "app_name", "Prod"
+            applicationId "com.firstappandroid.androidnativecm"
         }
     }
     compileOptions {
