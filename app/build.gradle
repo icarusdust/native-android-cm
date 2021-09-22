@@ -18,15 +18,11 @@ android {
     }
     
     productFlavors {
-        dev {
-            dimension "app"
-            resValue "string", "app_name", "Dev"
-            versionNameSuffix ".dev"
+        create("free") {
+            applicationIdSuffix = ".dev"
         }
-        prod {
-            dimension "app"
-            resValue "string", "app_name", "Prod"
-            applicationId "com.firstappandroid.androidnativecm.prod"
+        create("pro") {
+            applicationIdSuffix = ".prod"
         }
     }
 
