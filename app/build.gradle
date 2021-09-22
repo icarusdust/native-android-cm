@@ -17,14 +17,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     
-    productFlavors {
-        create("free") {
-            applicationIdSuffix = ".dev"
-        }
-        create("pro") {
-            applicationIdSuffix = ".prod"
-        }
-    }
 
     signingConfigs {
         release {
