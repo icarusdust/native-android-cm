@@ -65,4 +65,3 @@ workflows:
 #             curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-live/upload" -F "file=@app/builds/outputs/app-release.apk"
     artifacts:
       - app/build/outputs/**/*.apk
-lsdf
