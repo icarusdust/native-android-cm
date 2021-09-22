@@ -38,11 +38,6 @@ android {
         release {
             signingConfig signingConfigs.release
         }
-        customDebug{
-            initWith debug
-            applicationIdSuffix ".dev"
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-        }
     }
     
         flavorDimensions "dev"
@@ -50,13 +45,11 @@ android {
         productFlavors {
         dev {
             dimension "dev"
-            resValue "string", "app_name", "Dev"
-            versionNameSuffix ".dev"
+            applicationIdSuffix ".dev"
         }
         prod {
             dimension "dev"
-            resValue "string", "app_name", "Prod"
-            applicationId "com.firstappandroid.androidnativecm"
+            applicationIdSuffix ".prod"
         }
     }
     compileOptions {
