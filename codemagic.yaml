@@ -35,6 +35,13 @@ workflows:
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/local.properties"
+      - name: Test
+        script: |
+           if test -f "~/SUCCESS"; then
+               echo "xyx"
+           else 
+               echo "abc"
+          fi
       - name: Set up keystore
         script: |
           echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.keystore
