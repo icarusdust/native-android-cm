@@ -41,7 +41,7 @@ workflows:
                echo "xyx"
            else 
                echo "abc"
-          fi
+           fi
       - name: Set up keystore
         script: |
           echo $CM_KEYSTORE | base64 --decode > /tmp/keystore.keystore
