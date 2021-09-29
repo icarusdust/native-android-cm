@@ -39,18 +39,7 @@ android {
         }
     }
     
-        flavorDimensions "dev"
-    
-        productFlavors {
-        dev {
-            dimension "dev"
-            applicationIdSuffix ".dev"
-        }
-        prod {
-            dimension "dev"
-            applicationIdSuffix ".prod"
-        }
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
