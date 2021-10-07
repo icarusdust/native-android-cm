@@ -25,7 +25,7 @@ workflows:
     scripts:
       - name: Netrc
         script: |
-          #!/usr/bin/env bash
+          #!/usr/bin/env zsh
           cd ~
           touch .netrc
           echo "machine api.mapbox.com" >> .netrc
