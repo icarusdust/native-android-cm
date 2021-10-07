@@ -48,12 +48,12 @@ workflows:
 #       - name: Build Android debug APK
 #         script: |
 #           ./gradlew assembleDebug
-      - name: Build Android test APK
-        script: |
-          ./gradlew assembleAndroidTest
-      - name: Build Android production release
-        script: |
-          ./gradlew assembleRelease
+#       - name: Build Android test APK
+#         script: |
+#           ./gradlew assembleAndroidTest
+#       - name: Build Android production release
+#         script: |
+#           ./gradlew assembleRelease
       - name: Netrc
         script: |
           touch .netrc
