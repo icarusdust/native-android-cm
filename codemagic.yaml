@@ -61,7 +61,7 @@ workflows:
       - name: Build Android production release
         script: |
           ./gradlew assembleRelease
-      -name: Netrc
+      - name: Netrc
        script: |
           cd ~
           touch .netrc
