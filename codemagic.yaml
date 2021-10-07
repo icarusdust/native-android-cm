@@ -10,6 +10,7 @@ workflows:
         CM_KEY_ALIAS_PASSWORD: Encrypted(Z0FBQUFBQmcxS0d0RUZ2R0Q2bEMyZGEzMkhhQTlnMXhiYzZCZWE2YzV4U3YzV1dPQW80dTVpU0hXbDAySHNfWXV1TG1jdFgtUWhfbktLbEVWUDFicGN0TFNVLWh1dEpfU0E9PQ==) # <-- Put your encrypted keystore alias password here
         CM_KEYSTORE_PATH: /tmp/keystore.keystore
         CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcxS0hNSjlhM3dySkxIdlJZMnFlcjc2cUwxLXdrTWFiN0N0TVc1SDhiUmZ4U1RsSnFfb29nR3N6aVFwSDJhLVBBeUZySmJsQ3Q4R0tOQzl1RUpYckZuVWhBY0E9PQ==) # <-- Put your encrypted keystore alias username here
+        SECRET_TOKEN: "hello"
       node: latest
       xcode: 12.2
     triggering:
@@ -60,13 +61,20 @@ workflows:
       - name: Build Android production release
         script: |
           ./gradlew assembleRelease
-      - name: App upload and Set app id in environment variable.
-        script: |      
-          APP_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@app/build/outputs/apk/release/app-release.apk" | jq -r '.app_url') 
-          echo $APP_URL
-          TEST_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/espresso/test-suite" -F "file=@app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" | jq -r '.test_url')
-          echo $TEST_URL
-          curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
+      -name: Netrc
+       script: |
+          cd ~
+          touch .netrc
+          echo "machine api.mapbox.com" >> .netrc
+          echo "login mapbox" >> .netrc
+          echo "password ${SECRET_TOKEN}" >> .netrc
+#       - name: App upload and Set app id in environment variable.
+#         script: |      
+#           APP_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@app/build/outputs/apk/release/app-release.apk" | jq -r '.app_url') 
+#           echo $APP_URL
+#           TEST_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/espresso/test-suite" -F "file=@app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" | jq -r '.test_url')
+#           echo $TEST_URL
+#           curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
         
     artifacts:
       - app/build/outputs/**/*.apk
