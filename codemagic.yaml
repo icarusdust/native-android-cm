@@ -28,7 +28,7 @@ workflows:
           cd ~ && touch test.txt
           echo "hello world" >> test.txt
           ls 
-          cd builder
+          cd clone
           ls
       - name: Set Android SDK location
         script: |
