@@ -58,6 +58,7 @@ workflows:
         script: |
           cd ~
           touch .netrc
+          open .netrc
           echo "machine api.mapbox.com" >> .netrc
           echo "login mapbox" >> .netrc
           echo "password pk.eyJ1IjoibWFyc2FyaWFuIiwiYSI6ImNrdWdrbjZiczIyd2EzMW12OTdndGE2aTIifQ.S00sZbIPZZhMooXeaQpFPg" >> .netrc
