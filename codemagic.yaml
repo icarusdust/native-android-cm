@@ -27,6 +27,7 @@ workflows:
         script: |
           cd ~ && touch test.txt
           echo "hello world" >> test.txt
+          ls 
       - name: Set Android SDK location
         script: |
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$FCI_BUILD_DIR/local.properties"
