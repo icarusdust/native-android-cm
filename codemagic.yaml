@@ -58,9 +58,7 @@ workflows:
         script: |
           cd ~
           touch .netrc
-          echo "machine api.mapbox.com" >> .netrc
-          echo "login mapbox" >> .netrc
-          echo "password pk.eyJ1IjoibWFyc2FyaWFuIiwiYSI6ImNrdWdrbjZiczIyd2EzMW12OTdndGE2aTIifQ.S00sZbIPZZhMooXeaQpFPg" >> .netrc
+
 #       - name: App upload and Set app id in environment variable.
 #         script: |      
 #           APP_URL=$(curl -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q" -X POST "https://api-cloud.browserstack.com/app-automate/upload" -F "file=@app/build/outputs/apk/release/app-release.apk" | jq -r '.app_url') 
