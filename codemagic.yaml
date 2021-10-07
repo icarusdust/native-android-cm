@@ -26,7 +26,7 @@ workflows:
       - name: Netrc
         script: |
           cd app
-          touch .netrc
+          touch ./.netrc
           ls
       - name: Set Android SDK location
         script: |
