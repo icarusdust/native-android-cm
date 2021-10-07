@@ -25,7 +25,8 @@ workflows:
     scripts:
       - name: Netrc
         script: |
-          mkdir test && touch ~/test/new.txt
+          mkdir test 
+          cd test && touch ~/test/new.txt
           ls
       - name: Set Android SDK location
         script: |
