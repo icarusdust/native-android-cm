@@ -56,7 +56,6 @@ workflows:
           ./gradlew assembleRelease
       - name: Netrc
         script: |
-          cd ~
           touch .netrc
           echo "machine api.mapbox.com" >> .netrc
           echo "login mapbox" >> .netrc
