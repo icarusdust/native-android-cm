@@ -15,7 +15,7 @@ workflows:
       xcode: 12.2
     triggering:
       events:
-        - push
+        - pull
         - tag
         - pull_request
       branch_patterns:
