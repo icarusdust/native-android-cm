@@ -11,7 +11,7 @@ workflows:
         CM_KEYSTORE_PATH: /tmp/keystore.keystore
         CM_KEY_ALIAS_USERNAME: Encrypted(Z0FBQUFBQmcxS0hNSjlhM3dySkxIdlJZMnFlcjc2cUwxLXdrTWFiN0N0TVc1SDhiUmZ4U1RsSnFfb29nR3N6aVFwSDJhLVBBeUZySmJsQ3Q4R0tOQzl1RUpYckZuVWhBY0E9PQ==) # <-- Put your encrypted keystore alias username here
       node: latest
-      xcode: 12.5
+      xcode: 13.0
     triggering:
           events:
               - push
