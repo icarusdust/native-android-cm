@@ -38,7 +38,7 @@ workflows:
 #       - name: Build Android debug APK
 #         script: |
 #           ./gradlew assembleDebug
-      - name: Build Android debug APKf
+      - name: Build Android debug APK
         script: |
           ./gradlew assembleDebug
 #       - name: Build Android test APK
