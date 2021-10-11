@@ -58,3 +58,11 @@ workflows:
         
     artifacts:
       - app/build/outputs/**/*.apk
+      
+    publishing:
+    # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
+      slack: 
+        # See the following link about how to connect your Slack account - https://docs.codemagic.io/publishing-yaml/distribution/#slack
+        channel: "#test_channel"
+
+
