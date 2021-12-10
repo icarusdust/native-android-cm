@@ -58,6 +58,7 @@ workflows:
         
     artifacts:
       - app/build/outputs/**/*.apk
+      - app/build/outputs/**/*.aab
       
     publishing:
     # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
