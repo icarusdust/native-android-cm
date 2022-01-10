@@ -34,6 +34,9 @@ workflows:
           keyAlias=$CM_KEY_ALIAS_USERNAME
           storeFile=/tmp/keystore.keystore
           EOF
+      - name: python test sources:
+        script: |
+           apt install python3-testresources
       - name: Build Android debug APK
         script: |
           ./gradlew assembleDebug
