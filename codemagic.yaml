@@ -39,7 +39,7 @@ workflows:
 #            apt install python3-testresources
       - name: Build Android debug APK
         script: |
-          ./gradlew assembleDebug
+          ./gradlew assembleRelease
 # #       - name: Build Android debug APK
 # #         script: |
 # #           ./gradlew assembleDebug
