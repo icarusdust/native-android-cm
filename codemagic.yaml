@@ -41,7 +41,7 @@ workflows:
 #            apt install python3-testresources
       - name: Build Android debug APK
         script: |
-          ./gradlew assembleRelease
+          ./gradlew bundleRelease
 # #       - name: Build Android debug APK
 # #         script: |
 # #           ./gradlew assembleDebug
@@ -71,7 +71,7 @@ workflows:
       - app/build/outputs/**/*.apk
 #         - app/build/**/outputs/**/**/*.apk
 #         - app/build/outputs/**/**/*.apk
-#       - app/build/outputs/**/*.aab
+      - app/build/outputs/**/*.aab
     publishing:
          firebase:
            firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
