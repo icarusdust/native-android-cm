@@ -41,7 +41,7 @@ workflows:
 #            apt install python3-testresources
       - name: Build Android debug APK
         script: |
-          ./gradlew bundleRelease
+          ./gradlew assembleRelease
 # #       - name: Build Android debug APK
 # #         script: |
 # #           ./gradlew assembleDebug
@@ -68,10 +68,10 @@ workflows:
 # #           curl -X POST "https://api-cloud.browserstack.com/app-automate/espresso/build" -d '{"devices": ["Google Pixel 3-9.0"], "app": "'"$APP_URL"'", "deviceLogs" : true, "testSuite": "'"$TEST_URL"'"}' -H "Content-Type: application/json" -u "nihalagazade_JxPH1i:4y5LkQnzzGkv2s7ERZ4q"    
         
     artifacts:
-#       - app/build/outputs/**/*.apk
+      - app/build/outputs/**/*.apk
 #         - app/build/**/outputs/**/**/*.apk
 #         - app/build/outputs/**/**/*.apk
-      - app/build/outputs/**/*.aab
+#       - app/build/outputs/**/*.aab
     publishing:
          firebase:
            firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
