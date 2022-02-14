@@ -70,6 +70,15 @@ workflows:
 #         - app/build/**/outputs/**/**/*.apk
         - app/build/outputs/**/**/*.apk
 #       - app/build/outputs/**/*.aab
+    publishing:
+         firebase:
+           firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+    # OR: firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+           android:
+             app_id: 1:820389193401:android:71f75c8ea92a28760e9d68
+
+             groups: # Add one or more groups that you wish to distribute your Android application to, you can create groups in the Firebase console
+                - androidTesters
       
 #     publishing:
 #     # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
