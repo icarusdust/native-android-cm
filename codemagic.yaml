@@ -74,7 +74,7 @@ workflows:
       - app/build/outputs/**/*.aab
     publishing:
          firebase:
-           firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+           firebase_token: $FIREBASE_TOKEN
     # OR: firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
            android:
              app_id: 1:820389193401:android:71f75c8ea92a28760e9d68
