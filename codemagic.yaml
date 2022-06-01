@@ -5,8 +5,9 @@ workflows:
     instance_type: linux_x2
     scripts:
       - name: Run tests
-              git lfs install --skip-smudge
-        script: ./gradlew test
+        script: |
+            git lfs install --skip-smudge
+            ./gradlew test
       - name: Build debug apk
               git lfs install --skip-smudge
         script: ./gradlew assembleDebug
