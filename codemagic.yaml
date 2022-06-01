@@ -1,8 +1,8 @@
 workflows:
-  instance_type: linux_x2
   simple-workflow:
     name: Native Android
     max_build_duration: 60
+    instance_type: linux_x2
     scripts:
       - name: Run tests
               git lfs install --skip-smudge
